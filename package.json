@@ -4,21 +4,16 @@
   "description": "Foundation as React components.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
-  "files": [
-    "lib",
-    "src",
-    ".npmignore",
-    "LICENSE",
-    "README.md",
-    "package.json"
-  ],
+  "files": ["lib", "src", ".npmignore", "LICENSE", "README.md", "package.json"],
   "scripts": {
     "compile": "babel --loose es6.modules -d lib/ src/",
-    "lint": "eslint src test",
+    "lint": "eslint --fix src test",
     "precommit": "yarn lint && yarn test",
     "prepublish": "yarn lint && yarn compile",
-    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --require test/index.js --recursive",
-    "test:cover": "istanbul cover _mocha -- --compilers js:babel-core/register --require test/index.js --recursive",
+    "test":
+      "NODE_ENV=test mocha --compilers js:babel-core/register --require test/index.js --recursive",
+    "test:cover":
+      "istanbul cover _mocha -- --compilers js:babel-core/register --require test/index.js --recursive",
     "test:watch": "yarn test -- --watch --reporter min"
   },
   "repository": {
@@ -82,10 +77,6 @@
     "sinon": "^1.17.3"
   },
   "babel": {
-    "presets": [
-      "stage-2",
-      "es2015",
-      "react"
-    ]
+    "presets": ["stage-2", "es2015", "react"]
   }
 }
